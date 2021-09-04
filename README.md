@@ -1,7 +1,23 @@
 # Fish classifier segmentation web application
 
-Data was downloaded from [Kaggle](https://www.kaggle.com/crowww/a-large-scale-fish-dataset)
+## How does it works ?
+Application was built base on kaggle dataset and making classification fish types ("Black Sea Sprat","Gilt-Head Bream","Hourse Mackerel","Red Mullet","Red Sea Bream","Sea Bass","Shrimp","Striped Red Mullet","Trout")
 
+When you run .py file or app you will see first main display 
+
+![](https://github.com/tural327/Fish_classifier_desk_app/blob/master/some_other_files/main.png)
+
+For generate your image you need first drag and drop your image file **Drag and Drop Here** area for see your image you need just push **Show** button , if your image okay then you can push Generator button for see your segmented and dedtected images left side of app 
+
+![](https://github.com/tural327/Fish_classifier_desk_app/blob/master/some_other_files/result.png)
+
+Buttom of main dispaly class of fish type going to appear if you wondering to change displays like if you want to see segmented or dedtected images image at the main display you need just select which of the display you wandering display your image then click change display button .so you done =)
+
+![](https://github.com/tural327/Fish_classifier_desk_app/blob/master/some_other_files/end_res.gif)
+
+
+Data was downloaded from [Kaggle](https://www.kaggle.com/crowww/a-large-scale-fish-dataset)
+## Application Details
 # Software
 - App developed Ubuntu 20.04 
 - Python 3.8 
@@ -188,3 +204,32 @@ For accuracy :
 For loss :
 
 ![](https://github.com/tural327/Fish_classifier_desk_app/blob/master/some_other_files/class.png)
+
+
+
+## Combining all results ## 
+
+Display U-net result as image was little problem because image dimension was 1 but we need 3 dimensions images so for handiling it i uesed simply convertor such as:
+
+```python
+
+display_unet = np.dstack([y_pred_a[0], y_pred_a[0], y_pred_a[0]])
+
+
+```
+
+and for printin fish class name i write simple python script [test_class.py](https://github.com/tural327/Fish_classifier_desk_app/blob/master/desk_app_for_fish/test_class.py) here just i loaded my model for testing image need to convert as a tensor for that i used :
+
+```python
+
+    tensor = tf.keras.preprocessing.image.load_img(
+        picture, grayscale=False, color_mode='rgb', target_size=(128, 128),
+        interpolation='nearest'
+        )
+    input_arr = tf.keras.preprocessing.image.img_to_array(tensor)
+
+    tesnor_for_pred = tf.reshape(input_arr, [1, 128, 128, 3])
+    
+
+```
+after that mission was done our model was ready for web app part 
