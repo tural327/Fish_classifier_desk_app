@@ -40,7 +40,7 @@ val_ds = tf.keras.preprocessing.image_dataset_from_directory(
 
 
 
-# Augmentation layer help us to make additional training..
+# prevent overfitting
 data_augmentation = keras.Sequential(
   [
     layers.experimental.preprocessing.RandomFlip("horizontal", 
