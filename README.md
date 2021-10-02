@@ -1,4 +1,4 @@
-# Fish classifier segmentation web application
+# Fish classifier segmentation desk application
 
 ## How does it works ?
 Application was built base on kaggle dataset and making classification fish types ("Black Sea Sprat","Gilt-Head Bream","Hourse Mackerel","Red Mullet","Red Sea Bream","Sea Bass","Shrimp","Striped Red Mullet","Trout")
