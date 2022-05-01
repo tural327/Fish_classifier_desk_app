@@ -16,7 +16,7 @@ Buttom of main dispaly class of fish type going to appear if you wondering to ch
 ![](https://github.com/tural327/Fish_classifier_desk_app/blob/master/some_other_files/end_res.gif)
 
 
-Data was downloaded from [Kaggle](https://www.kaggle.com/crowww/a-large-scale-fish-dataset)
+Data downloaded from [Kaggle](https://www.kaggle.com/crowww/a-large-scale-fish-dataset)
 ## Application Details
 # Software
 - App developed Ubuntu 20.04 
